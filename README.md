@@ -9,17 +9,17 @@ HOWTO
 -----
 
 1. download and unpack the raw data (*.json.gz) from from 'https://www.jenkins-ci.org/census/'
-
-   $> groovy download.groovy [pwd]
+   
+    $> groovy download.groovy [pwd]
 
 2. collect the data from the raw json format and store it into a local SQLight database
    ... you might have to increase the memory: export JAVA_OPTS="-Xmx4000M -Xms4000M"
-
-   $> groovy collectNumbers.groovy
+   
+    $> groovy collectNumbers.groovy
 
 3. generate the fine grained data set (json) for each plugin
-
-	$> groovy createJson.groovy
+   
+    $> groovy createJson.groovy
 
 The final json files will be in [worksapce]/target/stats - these files have to be uploaded to a webserver to make them available for the confluence plugin.
 
